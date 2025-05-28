@@ -26,16 +26,14 @@ This project demonstrates the process of password cracking using hashing algorit
 ### 🔐 1. Hash Creation
 
 Hashes were created using:
-```bash
+
 echo -n "hacker" | md5sum
 echo -n "xijinping" | sha1sum
 echo -n "ramdhan12" | sha256sum
 🗂 2. Cracking with Public Wordlist
 Ran John with rockyou.txt for MD5 & SHA1:
 
-bash
-Copy
-Edit
+
 john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt md5.hash
 john --format=raw-sha1 --wordlist=/usr/share/wordlists/rockyou.txt sha1.hash
 ✅ Successfully cracked both.
@@ -43,15 +41,11 @@ john --format=raw-sha1 --wordlist=/usr/share/wordlists/rockyou.txt sha1.hash
 ⚙️ 3. Cracking SHA256 with Custom Wordlist
 SHA256 could not be cracked with rockyou.txt, so a custom wordlist was made using:
 
-bash
-Copy
-Edit
+
 cupp -i
 Tried again:
 
-bash
-Copy
-Edit
+
 john --format=raw-sha256 --wordlist=custom.txt sha256.hash
 ❌ No success — great for showing real-world limitations.
 
